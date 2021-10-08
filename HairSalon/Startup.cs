@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using HairSalon.Models;
+//using HairSalon.Models;
 
 namespace HairSalon
 {
@@ -14,7 +14,8 @@ public class Startup
     {
       var builder = new ConfigurationBuilder()
         .SetBasePath(env.ContentRootPath)
-        .AddJsonFile("appsettings.json");
+        // .AddJsonFile("appsettings.json");
+        .AddEnvironmentVariables();   //needs to be replaced with above line later
       Configuration = builder.Build();
     }
 
@@ -24,9 +25,9 @@ public class Startup
     {
       services.AddMvc();
       
-      services.AddEntityFrameworkMySql()
-        .AddDbContext<HairSalonContext>(options => options
-        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+      // services.AddEntityFrameworkMySql()
+      //   .AddDbContext<HairSalonContext>(options => options
+      //   .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
     public void Configure(IApplicationBuilder app)
