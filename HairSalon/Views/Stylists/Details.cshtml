@@ -5,16 +5,20 @@
 @using HairSalon.Models
 @model HairSalon.Models.Stylist
 
-<h1>@Html.DisplayFor(model => model.Name) | @Html.DisplayFor(model => model.Details)</div></h1>
-<h2>Stylist's Clients</h2>
+<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h4>Stylist Details:</h4>
+@Html.DisplayFor(model => model.Details)
+<br>
+<br>
+<h4>Stylist's Clients:</h4>
 <ul>
   @foreach (Client client in Model.Clients)
   {
     <li>@client.ClientName</li>
   }
-  <br>
-  <p>@Html.ActionLink("Add a client", "Create", "Clients")</p>
 </ul>
+<br>
+<p class="btn btn-dark">@Html.ActionLink("Add a client", "Create", "Clients")</p>
 
-<p>@Html.ActionLink("All Stylists", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p class="btn btn-dark">@Html.ActionLink("All Stylists", "Index")</p>
+<p class="btn btn-dark">@Html.ActionLink("Home", "Index", "Home")</p>
