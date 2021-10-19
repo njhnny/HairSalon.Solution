@@ -10,13 +10,14 @@
 * HTML 
 * Bootstrap
 * MySQL Workbench
-* Entity Framework Core
+* Entity Framework
 
 ## Description
 This is an MVC web application for managing client and stylist information at a hair salon.
 
 ## Setup and Installation
-
+* Clone this repository and open in your favorite text editor
+*
 ## Known Bugs
 
 ## License
